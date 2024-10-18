@@ -9,15 +9,12 @@
 
 body{
     background-color: #1C2C1D;
-    padding: 20px;
-    /* border: 4px solid rgb(255, 255, 255); */
 }
 
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* border: 4px solid rgb(255, 255, 255); */
     border-radius: 10px;
     min-width:fit-content;
 }
