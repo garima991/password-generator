@@ -105,7 +105,7 @@ function saveToHistory(){
         i.classList.add("fa-regular","fa-copy")
 
         copyBtn.appendChild(i);
-        copyBtn.setAttribute("style", "padding: 20px; background-color:#1C2C1D; color: white; border: none");
+        copyBtn.setAttribute("style", "padding: 10px; background-color:#1C2C1D; color: white; border: none");
         
         copyBtn.addEventListener("click", () => {
             copyToClipboard(password);
