@@ -98,22 +98,14 @@ function saveToHistory(){
         list.textContent = `${idx+1}. ${password}`;
         historyList.appendChild(list);
        
-        // list.setAttribute("style", "color:white, font-size: 20px, font-famliy : Chakra Petch, list-style: none, padding: 4px ");
-        list.style.color = "white";
-        list.style.fontSize = "18px";
-        list.style.fontFamily = "Chakra Petch";
-        list.style.listStyle = "none";
+        list.setAttribute("style", "color:white; font-size: 20px; font-famliy : Chakra Petch; list-style: none; padding: 4px ");
         
         const copyBtn = document.createElement("button");
         let i = document.createElement("i");
         i.classList.add("fa-regular","fa-copy")
+
         copyBtn.appendChild(i);
-        copyBtn.className = "copy-btn";
-        copyBtn.style.padding = "20px";
-        copyBtn.style.backgroundColor = "#1C2C1D";
-        copyBtn.style.color = "rgb(255, 255, 255)";
-        copyBtn.style.border = "none";
-        
+        copyBtn.setAttribute("style", "padding: 20px; background-color:#1C2C1D; color: white; border: none");
         
         copyBtn.addEventListener("click", () => {
             copyToClipboard(password);
