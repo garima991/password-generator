@@ -59,7 +59,7 @@ generateButton.addEventListener("click" , () => {
     const para = generateSection.querySelector("p");
     para.textContent = password;
     para.style.color = "white";
-    para.style.fontSize = "20px";
+    para.style.fontSize = "18px";
     para.style.fontFamily = "Chakra Petch";
     para.style.fontWeight = "500";
     para.style.letterSpacing = "2px";
@@ -98,7 +98,7 @@ function saveToHistory(){
         list.textContent = `${idx+1}. ${password}`;
         historyList.appendChild(list);
        
-        list.setAttribute("style", "color:white; font-size: 20px; font-famliy : Chakra Petch; list-style: none; padding: 4px ");
+        list.setAttribute("style", "color:white; font-size: 16px; font-famliy : Chakra Petch; list-style: none; padding: 4px ");
         
         const copyBtn = document.createElement("button");
         let i = document.createElement("i");
