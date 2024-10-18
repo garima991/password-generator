@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b0df84ba90.js" crossorigin="anonymous"></script>
+    <title>Your Own Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>PASSWORD GENERATOR</h1>
+        <section class="generated">
+            <p id="generated-password"></p>
+            <button id ="copy"><i class="fa-regular fa-copy"></i></button>
+        </section>
+
+        <section class = "functionality">
+            <div class="input-type">
+                <label for="passLen">
+                    <input id = "passLen" type="range" value = "9" min = "6" max = "25" />
+                    <span class = "value"></span>
+                </label>
+                <div class="input">
+                    <label for="uppercase" >
+                        <input type="radio" id = "uppercase" />
+                        UpperCase
+                    </label>
+                    
+                    <label for="lowercase" >
+                        <input type="radio" id = "lowercase" />
+                        LowerCase
+                    </label>
+                    
+                    <label for="numbers" >
+                        <input type="radio" id = "number" />
+                        Numbers
+                    </label>
+                   
+                    <label for="symbols" >
+                        <input type="radio" id = "symbol" />
+                        Symbols
+                    </label>
+                </div>
+                
+                <div class="btn"><button id= "generateBtn">Generate <i class="fa-sharp fa-solid fa-arrows-rotate"></i></button></div>
+            </div>
+
+            <div class="history">
+                <h2>PASSWORD HISTORY</h2>
+                <div id = "passHistory"></div>
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <script src = "script.js"></script>
+    
+</body>
+</html>
