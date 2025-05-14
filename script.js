@@ -45,6 +45,11 @@ generateButton.addEventListener("click" , () => {
     const includeNumbers = document.getElementById('number').checked;
     const includeSymbols = document.getElementById('symbol').checked;
 
+    if (length < 4 || length > 32) {
+        alert("Password length must be between 4 and 32 characters");
+        return;
+    }
+
     const selectedOptions = {
         length: parseInt(length),
         uppercase: includeUppercase,
@@ -81,13 +86,16 @@ function addToHistory(password){
 }
 
 function copyToClipboard(password){
+    if (!password) {
+        alert("No password to copy!");
+        return;
+    }
     navigator.clipboard.writeText(password).then(() => {
         alert("Password copied to clipboard");
-        }).catch(err =>{
-            console.error("Error in copying to clipboard", err);
-        });
+    }).catch(err => {
+        console.error("Error in copying to clipboard", err);
+    });
 }
-
 
 function saveToHistory(){
     const historyList = document.getElementById("passHistory");
@@ -96,9 +104,8 @@ function saveToHistory(){
     passHistory.forEach((password, idx) => {
         const list = document.createElement("li");
         list.textContent = `${idx+1}. ${password}`;
-        historyList.appendChild(list);
-       
-        list.setAttribute("style", "color:white; font-size: 16px; font-famliy : Chakra Petch; list-style: none; padding: 4px ");
+        
+        list.setAttribute("style", "color:white; font-size: 16px; font-family: Chakra Petch; list-style: none; padding: 4px ");
         
         const copyBtn = document.createElement("button");
         let i = document.createElement("i");
@@ -109,14 +116,16 @@ function saveToHistory(){
         
         copyBtn.addEventListener("click", () => {
             copyToClipboard(password);
-            alert("Password copied to clipboard!");
         });
 
         list.appendChild(copyBtn);
-        historyList.appendChild(list)
+        historyList.appendChild(list);
     });
 }
 
-copyPassword.addEventListener("click",copyToClipboard);
+copyPassword.addEventListener("click", () => {
+    const password = generateSection.querySelector("p").textContent;
+    copyToClipboard(password);
+});
 
 
